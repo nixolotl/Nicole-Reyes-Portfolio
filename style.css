@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Courier Prime';
-  src: url('CourierPrime-Regular.ttf') format('truetype'); 
+  src: url('CourierPrime-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -22,19 +22,19 @@
 }
 
 :root {
-  --bg-color: #0B2B26;
-  --second-bg-color: #163832;
-  --text-color: #EAEAEA;
-  --main-color: #34B384;
+  --bg-color: #052d3a;
+  --second-bg-color: #274d59;
+  --text-color: #f5f8f9;
+  --main-color: #2790a5;
 }
 
-h1, h2, h3, h4, .heading, .logo {
-  font-family: "Space Grotesk", sans-serif;
+h1, h2, h3, h4, .heading {
+  font-weight: 700;
 }
 
 span {
   font-family: inherit;
-  background: linear-gradient(270deg, #34B384 0%, #7FFFD4 100%);
+  background: linear-gradient(270deg, #2790a5 0%, #7fdbe8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -70,12 +70,15 @@ body {
   display: none;
 }
 
-.logo {
-  font-size: 2.4rem;
-  color: var(--text-color);
-  font-weight: 700;
+.logo{
   cursor: pointer;
   transition: 0.3s ease-in-out;
+}
+
+.logo img{
+  height: 5rem;
+  width: auto;
+  display: block;
 }
 
 .logo:hover {
@@ -101,11 +104,11 @@ body {
   font-size: 1.8rem;
   padding: 1rem 2rem;
   border-radius: 3rem;
-  background: linear-gradient(270deg, var(--main-color) 0%, #7FFFD4 100%);
+  background: linear-gradient(270deg, #2790a5 0%, #7fdbe8 100%);
   letter-spacing: 1px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  color: black;
+  color: #052d3a;
   border: none;
   white-space: nowrap;
   font-weight: 700;
@@ -136,7 +139,6 @@ section {
 
 .home-content h1 {
   font-size: 7rem;
-  font-weight: 700;
   margin-top: 1.5rem;
   line-height: 1.1;
 }
@@ -225,45 +227,16 @@ section {
   color: black;
 }
 
-.btn-outline {
-  background: transparent;
-  color: var(--main-color);
-  box-shadow: none;
-  border: 2px solid var(--main-color);
-}
-
-.btn-outline:hover {
-  background: var(--main-color);
-  color: black;
-  box-shadow: 0 0 15px var(--main-color);
-}
-
 .about {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 10rem;
   background: var(--second-bg-color);
 }
 
-.about-img img {
-  width: 30vw;
-  height: 30vw;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 0 15px var(--main-color);
-  transition: 0.4s ease-in-out;
-}
-
-.about-img img:hover {
-  box-shadow: 0 0 15px var(--main-color),
-              0 0 30px var(--main-color);
-}
-
-.about-content h2 {
-  font-weight: 700;
-  font-size: 3.6rem;
-  text-align: left;
+.about-content{
+  max-width: 800px;
+  text-align: center;
 }
 
 .about-content p {
@@ -301,7 +274,6 @@ section {
 }
 
 .heading {
-  font-weight: 700;
   text-align: center;
   font-size: 4.2rem;
   margin-bottom: 5rem;
@@ -337,7 +309,6 @@ section {
 
 .service-box:hover {
   background: var(--second-bg-color);
-  color: var(--main-color);
   border: 2px solid var(--main-color);
   transform: translateY(-5px);
 }
@@ -359,7 +330,6 @@ section {
 .service-info h4 {
   font-size: 2.2rem;
   margin: 1.5rem 0;
-  font-weight: 700;
 }
 
 .service-info p {
@@ -382,12 +352,14 @@ section {
 }
 
 .project-carousel {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   max-width: 1100px;
   margin: 0 auto;
+  overflow: hidden; /* keeps oversized images from breaking the page layout */
 }
 
 .carousel-track {
@@ -395,16 +367,17 @@ section {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  flex: 1;
 }
 
 .carousel-slide {
+  display: flex;
+  flex-direction: column;
   transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
 }
 
 .carousel-slide.side {
   opacity: 0.4;
-  transform: scale(0.7);
+  transform: scale(0.8);
   filter: blur(1px);
 }
 
@@ -431,6 +404,7 @@ section {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 .dot.red { background: #ff5f56; }
 .dot.yellow { background: #ffbd2e; }
@@ -439,52 +413,26 @@ section {
 .folder-body {
   position: relative;
   width: fit-content;
-  max-width: 100%;
-  height: auto;
+  height: fit-content;
   background: var(--bg-color);
   border: 2px solid var(--main-color);
   border-radius: 0 1.5rem 1.5rem 1.5rem;
   margin-top: -2px;
   overflow: hidden;
-  display: flex;
+  transition: opacity 0.25s ease;
 }
 
-/* Remove fixed size overrides on active slide */
-.carousel-slide.active .folder-body {
-  width: fit-content;
-  height: auto;
-}
 
 .folder-body img {
   display: block;
-  max-width: 520px; /* Made the active image bigger */
+  max-height: 340px;
+  max-width: 400px;
+  width: auto;
   height: auto;
   object-fit: contain;
-  background: var(--second-bg-color);
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
-/* Scale side images down slightly */
-.carousel-slide.side .folder-body img {
-  max-width: 260px;
-
-}
-
-.folder-body.swap img {
+.folder-body.swapping {
   opacity: 0;
-  transform: scale(0.9);
-}
-
-.folder-body.swap .slide-overlay h3,
-.folder-body.swap .slide-overlay p,
-.folder-body.swap .slide-overlay .overlay-btns {
-  opacity: 0;
-  transform: translateY(6px);
-}
-
-.folder-body.swapping img {
-  opacity: 0;
-  transform: scale(0.95);
 }
 
 .slide-overlay {
@@ -502,14 +450,9 @@ section {
   transition: 0.3s ease-in-out;
 }
 
-.slide-overlay h3,
-.slide-overlay p,
-.slide-overlay .overlay-btns {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.carousel-slide.active:hover .slide-overlay {
-  opacity: 1;
+.carousel-slide.active .folder-body img {
+  max-height: 460px;
+  max-width: 560px;
 }
 
 .slide-overlay h3 {
@@ -534,7 +477,11 @@ section {
 }
 
 .carousel-arrow {
-  background: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.4);
   border: 2px solid var(--main-color);
   color: var(--main-color);
   font-size: 2rem;
@@ -546,11 +493,13 @@ section {
   transition: 0.3s ease;
 }
 
+#prevProject { left: 0.5rem; }
+#nextProject { right: 0.5rem; }
+
 .carousel-arrow:hover {
   background: var(--main-color);
   color: var(--bg-color);
 }
-
 .contact {
   background-color: var(--bg-color);
 }
@@ -677,22 +626,13 @@ section {
     width: 50vw;
     height: 50vw;
   }
-  .about {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .about h2 {
-    text-align: center;
-    margin: 2rem 0;
-  }
-  .about-img img {
-    width: 50vw;
-    height: 50vw;
-  }
   .services-container {
     grid-template-columns: 1fr;
   }
   .contact form .input-group {
     flex-direction: column;
+  }
+  .carousel-slide.side{
+    display: none; /* hide side previews on small screens so it doesn't overflow */
   }
 }

@@ -9,14 +9,13 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="header">
 
-      <a href="#home" class="logo">Nicole <span>Reyes</span></a>
+      <a href="#home" class="logo">
+        <img src="logo.png" alt="Nicole Reyes Logo">
+      </a>
 
       <i class="bx bx-menu" id="menu-icon"></i>
       <nav class="navbar">
@@ -35,7 +34,7 @@
       <div class="home-content">
         <h1>Hi, I'm <span>Nicole!</span></h1>
         <h2>
-          I'm an <span>Computer Engineering Student</span>
+          I'm a <span>Computer Engineering Student</span>
         </h2>
         <p>Somewhere between a keyboard and a breadboard.</p>
         <div class="social-icons">
@@ -53,7 +52,7 @@
           </a>
         </div>
         <div class="btn-group">
-          <a href="#" class="btn">Hire</a>
+          <a href="#contact" class="btn">Hire</a>
           <a href="#contact" class="btn">Contact</a>
         </div>
       </div>
@@ -62,28 +61,26 @@
       </div>
     </section>
 
-<section class="about" id="about">
-  <h2 class="heading">About <span>Me</span></h2>
+    <section class="about" id="about">
+      <h2 class="heading">About <span>Me</span></h2>
 
-  <div class="about-content">
-    <p>
-      I'm Nicole Reyes, a 3rd-year Computer Engineering student. My interest in CpE started with robotics because I loved the idea of making physical hardware move and respond through code.
-    </p>
+      <div class="about-content">
+        <p>
+          I'm Nicole Reyes, a 3rd-year Computer Engineering student. My interest in CpE started with robotics because I loved the idea of making physical hardware move and respond through code.
+        </p>
 
-    <!-- Hidden text block -->
-    <div class="about-more" id="aboutMore">
-      <p>
-        Over the last three years, my coursework has helped me build software across Python and Java, ranging from 2D games to full-stack web applications. I enjoy taking real-life situations and turning them into practical projects.
-      </p>
-      <p>
-        My main motivation in Computer Engineering is hardware-software integration. While most of my listed projects are software-focused, I am actively learning embedded systems and microcontroller programming through my CpE lab work.
-      </p>
-    </div>
+        <div class="about-more" id="aboutMore">
+          <p>
+            Over the last three years, my coursework has helped me build software across Python and Java, ranging from 2D games to full-stack web applications. I enjoy taking real-life situations and turning them into practical projects.
+          </p>
+          <p>
+            My main motivation in Computer Engineering is hardware-software integration. While most of my listed projects are software-focused, I am actively learning embedded systems and microcontroller programming through my CpE lab work.
+          </p>
+        </div>
 
-    <!-- Toggle Button -->
-    <button class="btn" id="readMoreBtn" type="button">Read More</button>
-  </div>
-</section>
+        <button class="btn" id="readMoreBtn" type="button">Read More</button>
+      </div>
+    </section>
 
     <section class="services" id="skills">
       <h2 class="heading">Skills</h2>
@@ -116,10 +113,10 @@
 
     <section class="projects" id="projects">
       <h2 class="heading">Projects</h2>
-    
+
       <div class="project-carousel">
         <button class="carousel-arrow" id="prevProject">&#10094;</button>
-    
+
         <div class="carousel-track">
           <div class="carousel-slide side" id="slidePrev">
             <div class="folder-tab"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
@@ -127,7 +124,7 @@
               <img id="imgPrev" src="" alt="">
             </div>
           </div>
-    
+
           <div class="carousel-slide active" id="slideActive">
             <div class="folder-tab"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
             <div class="folder-body">
@@ -135,11 +132,13 @@
               <div class="slide-overlay">
                 <h3 id="titleActive"></h3>
                 <p id="descActive"></p>
-                <a id="linkActive" href="#" class="btn">Review Project</a>
+                <div class="overlay-btns">
+                  <a id="linkActive" href="#" class="btn" target="_blank">Review Project</a>
+                </div>
               </div>
             </div>
           </div>
-    
+
           <div class="carousel-slide side" id="slideNext">
             <div class="folder-tab"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
             <div class="folder-body">
@@ -147,7 +146,7 @@
             </div>
           </div>
         </div>
-    
+
         <button class="carousel-arrow" id="nextProject">&#10095;</button>
       </div>
     </section>
@@ -161,13 +160,13 @@
             <input type="text" name="fullname" placeholder="FullName">
             <input type="email" name="email" placeholder="Email">
           </div>
-        
+
           <div class="input-box">
-            <input type="number" name="phone" placeholder="Phone Number">
+            <input type="tel" name="phone" placeholder="Phone Number">
             <input type="text" name="subject" placeholder="Subject">
           </div>
         </div>
-        
+
         <div class="input-group-2">
           <textarea name="message" placeholder="Your message" cols="30" rows="10"></textarea>
           <input type="submit" value="Send Message" class="btn">
@@ -192,25 +191,11 @@
       </div>
 
       <ul class="list">
-        <li>
-          <a href="#">FAQ</a>
-        </li>
-
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-
-        <li>
-          <a href="#about">About</a>
-        </li>
-
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
       <p class="copyright">
@@ -218,7 +203,6 @@
       </p>
 
     </footer>
-
 
     <script src="script.js"></script>
   </body>
