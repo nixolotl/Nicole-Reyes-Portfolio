@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Reyes Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+
+      <a href="#home" class="logo">Nicole <span>Reyes</span></a>
+
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+      </nav>
+      <a href="#contact" class="gradient-btn">
+        Contact Me
+      </a>
+
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h1>Hi, I'm <span>Nicole!</span></h1>
+        <h2>
+          I'm an <span>Engineer-in-Training</span>
+        </h2>
+        <p>Somewhere between a keyboard and a breadboard.</p>
+        <div class="social-icons">
+          <a href="https://github.com/nixolotl" target="_blank">
+            <i class="bx bxl-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nicole-helene-reyes-210616328" target="_blank">
+            <i class="bx bxl-linkedin-square"></i>
+          </a>
+          <a href="https://www.instagram.com/_nikolayan" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://web.facebook.com/nicole.reyes.531286" target="_blank">
+            <i class="bx bxl-facebook"></i>
+          </a>
+        </div>
+        <div class="btn-group">
+          <a href="#" class="btn">Hire</a>
+          <a href="#contact" class="btn">Contact</a>
+        </div>
+      </div>
+      <div class="home-img">
+        <img src="image.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="image.jpg" alt="">
+      </div>
+
+      <div class="about-content">
+        <h2>About <span>Me</span></h2>
+        <p>I'm a 3rd year Computer Engineering student with a
+           background rooted in robotics, beginning with Arduino
+           -based robots in junior high school and culminating in a soccer
+            robot competition win in senior high. While my current
+            portfolio primarily reflects software work, including an
+            original game inspired by my school's Wednesday elevator
+            restrictions, my long-term focus is robotics and IoT
+            development. Combining both is where I see myself heading next.
+            It's a direction I'm actively working toward, one project at a time.</p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </section>
+
+    <section class="services" id="skills">
+      <h2 class="heading">Skills</h2>
+      <div class="services-container">
+        <div class="service-box">
+          <div class="service-info">
+            <i class="bx bx-code"></i>
+            <h4>Web Development</h4>
+            <p>The exact stack powering the site you're looking at right now.</p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <i class="bx bx-chip"></i>
+            <h4>Embedded Systems</h4>
+            <p>Started with Arduino robots in junior high, still my favorite kind of problem to solve.</p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <i class="bx bxl-python"></i>
+            <h4>Programming</h4>
+            <p>Comfortable in Python, proven by building a complete game solo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2 class="heading">Projects</h2>
+    
+      <div class="project-carousel">
+        <button class="carousel-arrow" id="prevProject">&#10094;</button>
+    
+        <div class="carousel-track">
+          <div class="carousel-slide side" id="slidePrev">
+            <div class="folder-tab"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="folder-body">
+              <img id="imgPrev" src="" alt="">
+            </div>
+          </div>
+    
+          <div class="carousel-slide active" id="slideActive">
+            <div class="folder-tab"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="folder-body">
+              <img id="imgActive" src="" alt="">
+              <div class="slide-overlay">
+                <h3 id="titleActive"></h3>
+                <p id="descActive"></p>
+                <a id="linkActive" href="#" class="btn">Review Project</a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="carousel-slide side" id="slideNext">
+            <div class="folder-tab"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="folder-body">
+              <img id="imgNext" src="" alt="">
+            </div>
+          </div>
+        </div>
+    
+        <button class="carousel-arrow" id="nextProject">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="heading"> Contact <span>Me</span></h2>
+      <form action="https://formspree.io/f/xjykveee" method="POST">
+
+        <div class="input-group">
+          <div class="input-box">
+            <input type="text" name="fullname" placeholder="FullName">
+            <input type="email" name="email" placeholder="Email">
+          </div>
+        
+          <div class="input-box">
+            <input type="number" name="phone" placeholder="Phone Number">
+            <input type="text" name="subject" placeholder="Subject">
+          </div>
+        </div>
+        
+        <div class="input-group-2">
+          <textarea name="message" placeholder="Your message" cols="30" rows="10"></textarea>
+          <input type="submit" value="Send Message" class="btn">
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="https://github.com/nixolotl" target="_blank">
+          <i class="bx bxl-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/nicole-helene-reyes-210616328" target="_blank">
+          <i class="bx bxl-linkedin-square"></i>
+        </a>
+        <a href="https://www.instagram.com/_nikolayan" target="_blank">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="https://web.facebook.com/nicole.reyes.531286" target="_blank">
+          <i class="bx bxl-facebook"></i>
+        </a>
+      </div>
+
+      <ul class="list">
+        <li>
+          <a href="#">FAQ</a>
+        </li>
+
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+
+      <p class="copyright">
+        @Nicole Reyes | All Rights Reserved
+      </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
