@@ -11,19 +11,19 @@ const projects = [
     img: "project1.png",
     title: "WOW: Wednesday Rush",
     desc: "A Python game inspired by the weekly struggle of racing to the 6th-floor computer lab.",
-    link: "project-wow.html"
+    link: "https://github.com/nixolotl/WOW-Wednesday-Rush"
   },
   {
     img: "project2.png",
     title: "8-Bit Working Space",
     desc: "A digital workspace where users can find, book, and manage their study and meeting spaces.",
-    link: "project-8bit.html"
+    link: "https://github.com/nixolotl/8-bitWorkingSpace"
   },
   {
     img: "project3.png",
     title: "Ctrl.Alt.Elite",
     desc: "A peer-to-peer marketplace for buying and selling study notes, synced to a personal digital library.",
-    link: "project-ctrlaltelite.html"
+    link: "https://github.com/GrantIvanSartiga/Ctrl.Alt.Elite"
   }
 ];
 

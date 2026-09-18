@@ -48,6 +48,7 @@ html {
 body {
   background: var(--bg-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 .header {
@@ -137,15 +138,17 @@ section {
   text-align: right;
 }
 
+/* CHANGE: clamp() so hero text scales smoothly on every screen width
+   instead of only shrinking at the 1285px breakpoint */
 .home-content h1 {
-  font-size: 7rem;
+  font-size: clamp(4rem, 9vw, 7rem);
   margin-top: 1.5rem;
   line-height: 1.1;
 }
 
 .home-content h2 {
   margin: 1.5rem 0;
-  font-size: 3.2rem;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
 }
 
 .home-content p {
@@ -275,7 +278,7 @@ section {
 
 .heading {
   text-align: center;
-  font-size: 4.2rem;
+  font-size: clamp(3rem, 6vw, 4.2rem);
   margin-bottom: 5rem;
 }
 
@@ -358,6 +361,7 @@ section {
   justify-content: center;
   gap: 2rem;
   max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden; /* keeps oversized images from breaking the page layout */
 }
@@ -367,12 +371,14 @@ section {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  width: 100%;
 }
 
 .carousel-slide {
   display: flex;
   flex-direction: column;
   transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+  max-width: 100%;
 }
 
 .carousel-slide.side {
@@ -385,6 +391,7 @@ section {
   opacity: 1;
   transform: scale(1);
   z-index: 2;
+  max-width: 100%;
 }
 
 .folder-tab {
@@ -414,6 +421,7 @@ section {
   position: relative;
   width: fit-content;
   height: fit-content;
+  max-width: 100%;
   background: var(--bg-color);
   border: 2px solid var(--main-color);
   border-radius: 0 1.5rem 1.5rem 1.5rem;
@@ -422,15 +430,17 @@ section {
   transition: opacity 0.25s ease;
 }
 
-
+/* CHANGE: viewport-relative caps so the image can never be wider/taller
+   than the screen, instead of the old fixed 400px/560px values */
 .folder-body img {
   display: block;
-  max-height: 340px;
-  max-width: 400px;
+  max-height: min(340px, 42vh);
+  max-width: min(400px, 78vw);
   width: auto;
   height: auto;
   object-fit: contain;
 }
+
 .folder-body.swapping {
   opacity: 0;
 }
@@ -450,9 +460,8 @@ section {
   transition: 0.3s ease-in-out;
 }
 
-.carousel-slide.active .folder-body img {
-  max-height: 460px;
-  max-width: 560px;
+.carousel-slide.active:hover .slide-overlay {
+  opacity: 1;
 }
 
 .slide-overlay h3 {
@@ -474,6 +483,12 @@ section {
 .overlay-btns .btn {
   padding: 1rem 2rem;
   font-size: 1.4rem;
+}
+
+/* CHANGE: same vw-based cap for the active (larger) slide */
+.carousel-slide.active .folder-body img {
+  max-height: min(460px, 50vh);
+  max-width: min(560px, 85vw);
 }
 
 .carousel-arrow {
@@ -500,6 +515,7 @@ section {
   background: var(--main-color);
   color: var(--bg-color);
 }
+
 .contact {
   background-color: var(--bg-color);
 }
@@ -634,5 +650,65 @@ section {
   }
   .carousel-slide.side{
     display: none; /* hide side previews on small screens so it doesn't overflow */
+  }
+}
+
+/* CHANGE: new phone-specific pass, targeted mainly at the projects carousel */
+@media(max-width: 600px) {
+  section {
+    padding: 8rem 6%;
+  }
+  .header {
+    padding: 2.5rem 6%;
+  }
+  .home-img img {
+    width: 60vw;
+    height: 60vw;
+  }
+  .navbar {
+    width: 75%;
+  }
+
+  /* Projects carousel */
+  .project-carousel {
+    padding: 0 1rem;
+  }
+  .folder-tab {
+    width: 50%;
+    height: 2.4rem;
+  }
+  .carousel-slide.active .folder-body img {
+    max-height: min(320px, 40vh);
+    max-width: 72vw;
+  }
+  .carousel-arrow {
+    width: 3.2rem;
+    height: 3.2rem;
+    min-width: 3.2rem;
+    font-size: 1.6rem;
+  }
+  #prevProject { left: 0; }
+  #nextProject { right: 0; }
+  .slide-overlay {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .slide-overlay h3 {
+    font-size: 1.8rem;
+  }
+  .slide-overlay p {
+    font-size: 1.3rem;
+  }
+  .overlay-btns .btn {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .service-box {
+    height: 300px;
+  }
+  .contact form .input-box input,
+  .contact form textarea {
+    padding: 1.4rem;
   }
 }
